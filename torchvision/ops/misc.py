@@ -60,6 +60,7 @@ class FrozenBatchNorm2d(torch.nn.Module):
                           DeprecationWarning)
             num_features = n
         super(FrozenBatchNorm2d, self).__init__()
+        self.num_features = num_features
         self.eps = eps
         self.register_buffer("weight", torch.ones(num_features))
         self.register_buffer("bias", torch.zeros(num_features))
